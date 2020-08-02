@@ -1,0 +1,33 @@
+{
+  "name": "bootstrap-show-notification",
+  "version": "1.0.0",
+  "description": "Shows Bootstrap 4 Alerts fixed in a layer on top of the page.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaack/bootstrap-show-notification.git"
+  },
+  "keywords": [
+    "Bootstrap 4",
+    "Bootstrap",
+    "jQuery",
+    "Widget",
+    "Html",
+    "UI",
+    "UX"
+  ],
+  "author": "https://shaack.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaack/bootstrap-show-notification/issues"
+  },
+  "homepage": "https://github.com/shaack/bootstrap-show-notification#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap-show-modal</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <!--<link rel="stylesheet" href="./node_modules/prismjs/themes/prism-tomorrow.css"/>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<section class="container py-5">
+    <h1>bootstrap-show-notification</h1>
+    <p>
+        A jQuery plugin wrapper around Bootstrap 4 Alerts, to create Alerts (also called Notifications) dynamically in JavaScript.
+    </p>
+    <h2>Examples</h2>
+    <button type="button" id="button-show-simple" class="btn btn-primary">Show a simple Notification</button>
+</section>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="src/bootstrap-show-notification.js"></script>
+<!--<script src="./node_modules/prismjs/prism.js"></script>-->
+<script>
+    $("#button-show-simple").click(function() {
+        $.showNotification({body: "Hello Notification!"})
+    })
+</script>
+<div class="alert alert-info">Test</div>
+</body>
+</html>
