@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-show-notification",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shows Bootstrap 4 Alerts fixed in a layer on top of the page.",
   "main": "index.html",
   "scripts": {
