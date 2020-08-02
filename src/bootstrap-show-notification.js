@@ -11,12 +11,11 @@
         this.props = {
             body: "", // put here the text, shown
             type: "primary", // the appearance
+            duration: 5500, // duration till auto-hide
+            maxWidth: "520px", // the notification maxWidth
             shadow: "0 2px 6px rgba(0,0,0,0.2)", // the box-shadow
             zIndex: 100,
-            margin: "1rem", // the margin (only above "breakpoint")
-            duration: 5000, // duration till auto-hide
-            smallMode: "500px", // will be shown in smallMode, below this
-            width: "420px", // the notification width (above small-mode)
+            margin: "1rem", // the margin (above maxWidth)
             direction: "prepend" // or "append", the stack direction
         }
         this.containerId = "bootstrap-show-notification-container"
@@ -45,11 +44,12 @@
                 "}" +
                 "#" + this.containerId + " .alert {" +
                 "box-shadow: " + this.props.shadow + ";" +
-                "width: " + this.props.width + ";" +
+                "max-width: " + this.props.maxWidth + ";" +
+                "float: right; clear: right;" +
                 "}" +
-                "@media screen and (max-width: " + this.props.smallMode + ") {" +
+                "@media screen and (max-width: " + this.props.maxWidth + ") {" +
                 "#" + this.containerId + " {max-width: 100%; width: 100%; right: 0; top: 0;}" +
-                "#" + this.containerId + " .alert {margin-bottom: 0.25rem;width: auto;}" +
+                "#" + this.containerId + " .alert {margin-bottom: 0.25rem;width: auto;float: none;}" +
                 "}"
             var head = document.head || document.getElementsByTagName('head')[0]
             var style = document.createElement('style')
