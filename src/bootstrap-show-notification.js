@@ -13,12 +13,13 @@
             type: "primary", // the appearance
             shadow: "0 2px 6px rgba(0,0,0,0.2)", // the box-shadow
             zIndex: 100,
-            margin: "1rem", // the margin, only above "breakpoint"
-            delay: 5000, // delay till auto-hide
-            breakpoint: "500px", // will be shown in small-mode, below this
-            width: "420px", // the notification width above small-mode
+            margin: "1rem", // the margin (only above "breakpoint")
+            duration: 5000, // duration till auto-hide
+            smallMode: "500px", // will be shown in smallMode, below this
+            width: "420px", // the notification width (above small-mode)
             direction: "prepend" // or "append", the stack direction
         }
+        this.containerId = "bootstrap-show-notification-container"
         for (var prop in props) {
             // noinspection JSUnfilteredForInLoop
             this.props[prop] = props[prop]
@@ -31,25 +32,24 @@
             "       <span aria-hidden='true'>&times;</span>" +
             "   </button>" +
             "</div>"
-        this.$container = $("#" + this.props.containerId)
+        this.$container = $("#" + this.containerId)
         if (!this.$container.length) {
-            console.log("creating new alert container")
-            this.$container = $("<div id='" + this.props.containerId + "'></div>")
+            this.$container = $("<div id='" + this.containerId + "'></div>")
             $(document.body).append(this.$container)
-            var css = "#" + this.props.containerId + " {" +
+            var css = "#" + this.containerId + " {" +
                 "position: fixed;" +
                 "right: " + this.props.margin + ";" +
                 "top: " + this.props.margin + ";" +
                 "margin-left: " + this.props.margin + ";" +
                 "z-index: " + this.props.zIndex + ";" +
                 "}" +
-                "#" + this.props.containerId + " .alert {" +
+                "#" + this.containerId + " .alert {" +
                 "box-shadow: " + this.props.shadow + ";" +
                 "width: " + this.props.width + ";" +
                 "}" +
-                "@media screen and (max-width: " + this.props.breakpoint + ") {" +
-                "#" + this.props.containerId + " {max-width: 100%; width: 100%; right: 0; top: 0;}" +
-                "#" + this.props.containerId + " .alert {margin-bottom: 0.25rem;width: auto;}" +
+                "@media screen and (max-width: " + this.props.smallMode + ") {" +
+                "#" + this.containerId + " {max-width: 100%; width: 100%; right: 0; top: 0;}" +
+                "#" + this.containerId + " .alert {margin-bottom: 0.25rem;width: auto;}" +
                 "}"
             var head = document.head || document.getElementsByTagName('head')[0]
             var style = document.createElement('style')
@@ -69,9 +69,8 @@
 
         $notification.addClass("show")
         setTimeout(function () {
-            console.log("hide", $notification)
             $notification.alert("close")
-        }, this.props.delay)
+        }, this.props.duration)
     }
     $.extend({
         showNotification: function (props) {

@@ -37,10 +37,10 @@ this.props = {
     type: "primary", // the appearance
     shadow: "0 2px 6px rgba(0,0,0,0.2)", // the box-shadow
     zIndex: 100,
-    margin: "1rem", // the margin, only above "breakpoint"
-    delay: 5000, // delay till auto-hide
-    breakpoint: "500px", // will be shown in small-mode, below this
-    width: "420px", // the notification width above small-mode
+    margin: "1rem", // the margin (only above "breakpoint")
+    duration: 5000, // duration till auto-hide
+    smallMode: "500px", // will be shown in smallMode, below this
+    width: "420px", // the notification width (above small-mode)
     direction: "prepend" // or "append", the stack direction
 }
 ```
