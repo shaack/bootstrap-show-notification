@@ -9,16 +9,15 @@
     function Notification(props) {
         // see https://getbootstrap.com/docs/4.0/components/alerts/
         this.props = {
-            body: "",
-            type: "primary",
-            shadow: "0 2px 6px rgba(0,0,0,0.2)",
+            body: "", // put here the text, shown
+            type: "primary", // the appearance
+            shadow: "0 2px 6px rgba(0,0,0,0.2)", // the box-shadow
             zIndex: 100,
-            margin: "1rem",
-            dismissible: true,
-            delay: 5000,
-            containerId: "bootstrap-show-notification-container",
-            breakpoint: "500px",
-            width: "420px"
+            margin: "1rem", // the margin, only above "breakpoint"
+            delay: 5000, // delay till auto-hide
+            breakpoint: "500px", // will be shown in small-mode, below this
+            width: "420px", // the notification width above small-mode
+            direction: "prepend" // or "append", the stack direction
         }
         for (var prop in props) {
             // noinspection JSUnfilteredForInLoop
@@ -61,8 +60,13 @@
     }
 
     Notification.prototype.showNotification = function () {
-        var $notification =  $(this.template)
-        this.$container.append($notification)
+        var $notification = $(this.template)
+        if (this.props.direction === "prepend") {
+            this.$container.prepend($notification)
+        } else {
+            this.$container.append($notification)
+        }
+
         $notification.addClass("show")
         setTimeout(function () {
             console.log("hide", $notification)
