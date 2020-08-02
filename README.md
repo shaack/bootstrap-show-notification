@@ -45,3 +45,14 @@ props = {
     width: "420px"
 }
 ```
+
+# More Bootstrap extensions from shaack.com
+
+You may want to check out our other Bootstrap and HTML extensions
+
+- [bootstrap-input-spinner](https://shaack.com/en/open-source-components) – Input numbers
+- [bootstrap-show-modal](https://shaack.com/en/open-source-components) – Show dialogs, dynamically
+- [bootstrap-show-notification](https://shaack.com/en/open-source-components) – Show notifications, dynamically
+- [bootstrap-detect-breakpoint](https://shaack.com/en/open-source-components) – Read the curr. BS BP from JS
+- [auto-resize-textarea](https://shaack.com/en/open-source-components) – Auto resize textareas by its content
+- [external-links-blank](https://shaack.com/en/open-source-components) – Open external links auto `_blank`
