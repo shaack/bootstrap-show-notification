@@ -11,7 +11,7 @@
         this.props = {
             body: "", // put here the text, shown
             type: "primary", // the appearance
-            duration: 5500, // duration till auto-hide
+            duration: 5500, // duration till auto-hide, set to `0` to disable auto-hide
             maxWidth: "520px", // the notification maxWidth
             shadow: "0 2px 6px rgba(0,0,0,0.2)", // the box-shadow
             zIndex: 100,
@@ -68,9 +68,11 @@
         }
 
         $notification.addClass("show")
-        setTimeout(function () {
-            $notification.alert("close")
-        }, this.props.duration)
+        if(this.props.duration) {
+            setTimeout(function () {
+                $notification.alert("close")
+            }, this.props.duration)
+        }
     }
     $.extend({
         showNotification: function (props) {

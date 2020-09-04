@@ -24,6 +24,9 @@
     <p>
         <button type="button" id="button-show-danger" class="btn btn-danger">Show a danger-notification</button>
     </p>
+    <p>
+        <button type="button" id="button-show-sticky" class="btn btn-secondary">Show a sticky notification with infinite duration</button>
+    </p>
     <h2>Usage</h2>
     <pre><code>
 &lt;script src="./src/bootstrap-show-notification.js">&lt;/script>
@@ -39,6 +42,11 @@
     $("#button-show-danger").click(function () {
         $.showNotification({
             body: "Danger!", type: "danger"
+        })
+    })
+    $("#button-show-sticky").click(function () {
+        $.showNotification({
+            body: "This notification will stay", type: "secondary", duration: 0 // set duration to `0` for sticky notifications
         })
     })
 &lt;/script>
@@ -70,6 +78,11 @@
     $("#button-show-danger").click(function () {
         $.showNotification({
             body: "Danger!", type: "danger"
+        })
+    })
+    $("#button-show-sticky").click(function () {
+        $.showNotification({
+            body: "This notification will stay", type: "secondary", duration: 0
         })
     })
 </script>

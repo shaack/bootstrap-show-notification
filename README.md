@@ -35,7 +35,7 @@ A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also 
 this.props = {
     body: "", // put here the text, shown
     type: "primary", // the appearance
-    duration: 5500, // duration till auto-hide
+    duration: 5500, // duration till auto-hide, set to `0` to disable auto-hide
     maxWidth: "520px", // the notification maxWidth
     shadow: "0 2px 6px rgba(0,0,0,0.2)", // the box-shadow
     zIndex: 100,
