@@ -13,17 +13,26 @@ A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also 
 ```html
 <script src="./src/bootstrap-show-notification.js"></script>
 <script>
+    // simple example
     $("#button-show-simple").click(function () {
         $.showNotification({body: "Hello Notification!"})
     })
+    // type info and more complex body
     $("#button-show-info").click(function () {
         $.showNotification({
             body: "<h3>For your Info</h3>This notification has a title and a body and more text than the previous one.", type: "info"
         })
     })
+    // type danger
     $("#button-show-danger").click(function () {
         $.showNotification({
             body: "Danger!", type: "danger"
+        })
+    })
+    // type secondary and sticky
+    $("#button-show-sticky").click(function () {
+        $.showNotification({
+            body: "This notification will stay", type: "secondary", duration: 0
         })
     })
 </script>
