@@ -1,6 +1,6 @@
 # bootstrap-show-notification
 
-A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also called Notifications) dynamically in JavaScript.
+A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also called notifications) dynamically in JavaScript.
 
 ![bootstrap-show-notification Example](https://shaack.com/projekte/assets/img/bootstrap-show-notification-lg.png?v=2)
 
