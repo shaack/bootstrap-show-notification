@@ -65,7 +65,7 @@ this.props = {
 }
 ```
 
-## More documentation
+## Documentation
 
 - [Repository and documentation](https://github.com/shaack/bootstrap-show-notification)
 
