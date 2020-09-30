@@ -1,10 +1,10 @@
 {
   "name": "bootstrap-show-notification",
   "version": "1.0.7",
-  "description": "Shows Bootstrap 4 Alerts fixed in a layer on top of the page.",
-  "main": "index.html",
+  "description": "Shows Bootstrap 4 Alerts as notifications, fixed above the content.",
+  "browser": "./src/boostrap-show-notification.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,12 +19,12 @@
     "UI",
     "UX"
   ],
-  "author": "https://shaack.com",
+  "author": "Stefan Haack (shaack.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/shaack/bootstrap-show-notification/issues"
   },
-  "homepage": "https://github.com/shaack/bootstrap-show-notification#readme",
+  "homepage": "https://shaack.com/en/open-source-components",
   "dependencies": {
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",

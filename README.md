@@ -1,17 +1,29 @@
 # bootstrap-show-notification
 
-A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also called notifications) dynamically in JavaScript.
+A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also called notifications) with JavaScript.
 
 ![bootstrap-show-notification Example](https://shaack.com/projekte/assets/img/bootstrap-show-notification-lg.png?v=2)
 
+=> 
+- Responsive and mobile friendly
+- Needs no extra CSS
+
 ## Try it
 
-[Demo Page](https://shaack.com/projekte/bootstrap-show-notification/)
+- [Demo Page](https://shaack.com/projekte/bootstrap-show-notification/)
+
+## Installation
+
+- [npm package](https://www.npmjs.com/package/bootstrap-show-notification)
+
+```sh
+npm install bootstrap-show-notification
+```
 
 ## Usage
 
 ```html
-<script src="./src/bootstrap-show-notification.js"></script>
+<script src="./node_modules/bootstrap-show-notification/src/bootstrap-show-notification.js"></script>
 <script>
     // simple example
     $("#button-show-simple").click(function () {
@@ -42,7 +54,7 @@ A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also 
 
 ```js
 this.props = {
-    body: "", // put here the text, shown
+    body: "", // the text, shown
     type: "primary", // the appearance
     duration: 5500, // duration till auto-hide, set to `0` to disable auto-hide
     maxWidth: "520px", // the notification maxWidth
@@ -53,13 +65,10 @@ this.props = {
 }
 ```
 
-# More Bootstrap extensions from shaack.com
+## More documentation
 
-You may want to check out our other Bootstrap and HTML extensions
+- [Repository and documentation](https://github.com/shaack/bootstrap-show-notification)
 
-- [bootstrap-input-spinner](https://shaack.com/en/open-source-components) – Input numbers
-- [bootstrap-show-modal](https://shaack.com/en/open-source-components) – Show dialogs, dynamically
-- [bootstrap-show-notification](https://shaack.com/en/open-source-components) – Show notifications, dynamically
-- [bootstrap-detect-breakpoint](https://shaack.com/en/open-source-components) – Read the curr. BS BP from JS
-- [auto-resize-textarea](https://shaack.com/en/open-source-components) – Auto resize textareas by its content
-- [external-links-blank](https://shaack.com/en/open-source-components) – Open external links auto `_blank`
+## More Bootstrap extensions
+
+Check out my [further Bootstrap extensions](https://shaack.com/en/open-source-components)
