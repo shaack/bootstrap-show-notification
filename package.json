@@ -4,7 +4,7 @@
   "description": "Shows Bootstrap 4 Alerts as notifications, fixed above the content.",
   "browser": "./src/boostrap-show-notification.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 1"
+    "test": "tput setaf 4;echo open ./test/index.html in your browser for testing."
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,9 @@
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3"
   }
 }
