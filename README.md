@@ -1,6 +1,6 @@
 # bootstrap-show-notification
 
-A jQuery plugin wrapper around Bootstrap 4 Alerts, to show them as toasts (also called notifications) with JavaScript.
+A jQuery plugin wrapper around Bootstrap 4 Alerts, to show them as toasts (also called notifications) dynamically from JavaScript.
 
 ![bootstrap-show-notification Example](https://shaack.com/projekte/assets/img/bootstrap-show-notification-lg.png?v=2)
 
