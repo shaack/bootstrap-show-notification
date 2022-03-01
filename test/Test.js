@@ -1,7 +1,4 @@
-var assert = chai.assert
-
-afterEach(function () {
-})
+import {describe, it, assert} from "../node_modules/teevi/src/teevi.js"
 
 describe('bootstrap-show-modal', function () {
     it('Should display notifications', function () {
@@ -16,5 +13,4 @@ describe('bootstrap-show-modal', function () {
             body: "This notification will stay", type: "secondary", duration: 0
         })
     })
-    // TODO more testing
 })

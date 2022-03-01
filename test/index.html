@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
-    <link rel="stylesheet" href="../node_modules/mocha/mocha.css"/>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"/>
+    <title>bootstrap-input-spinner test</title>
 </head>
 <body>
-<div id="mocha"></div>
 <div id="testContainer"></div>
-<script src="../node_modules/mocha/mocha.js"></script>
-<script src="../node_modules/chai/chai.js"></script>
-<script>mocha.setup('bdd')</script>
-<script src="../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <script src="../src/bootstrap-show-notification.js"></script>
-<script src="./test.js"></script>
-<script>
-    mocha.run()
+<script type="module">
+    import {teevi} from "../node_modules/teevi/src/teevi.js"
+    import "./Test.js"
+    teevi.run()
 </script>
 </body>
 </html>
