@@ -19,11 +19,11 @@
             direction: "prepend" // or "append", the stack direction
         }
         this.containerId = "bootstrap-show-notification-container"
-        for (var prop in props) {
+        for (let prop in props) {
             // noinspection JSUnfilteredForInLoop
             this.props[prop] = props[prop]
         }
-        var cssClass = "alert alert-" + this.props.type + " alert-dismissible fade"
+        const cssClass = "alert alert-" + this.props.type + " alert-dismissible fade"
         this.id = "id-" + Math.random().toString(36).substr(2)
         this.template =
             "<div class='" + cssClass + "' role='alert'>" + this.props.body +
@@ -35,7 +35,7 @@
         if (!this.$container.length) {
             this.$container = $("<div id='" + this.containerId + "'></div>")
             $(document.body).append(this.$container)
-            var css = "#" + this.containerId + " {" +
+            const css = "#" + this.containerId + " {" +
                 "position: fixed;" +
                 "right: " + this.props.margin + ";" +
                 "top: " + this.props.margin + ";" +
@@ -51,16 +51,16 @@
                 "#" + this.containerId + " {max-width: 100%; width: 100%; right: 0; top: 0;}" +
                 "#" + this.containerId + " .alert {margin-bottom: 0.25rem;width: auto;float: none;}" +
                 "}"
-            var head = document.head || document.getElementsByTagName('head')[0]
-            var style = document.createElement('style')
+            const head = document.head || document.getElementsByTagName('head')[0]
+            const style = document.createElement('style')
             head.appendChild(style)
             style.appendChild(document.createTextNode(css))
         }
-        this.showNotification()
+        this.element = this.showNotification()
     }
 
     Notification.prototype.showNotification = function () {
-        var $notification = $(this.template)
+        const $notification = $(this.template)
         if (this.props.direction === "prepend") {
             this.$container.prepend($notification)
         } else {
@@ -73,6 +73,7 @@
                 $notification.alert("close")
             }, this.props.duration)
         }
+        return $notification[0]
     }
     $.extend({
         showNotification: function (props) {

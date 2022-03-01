@@ -11,7 +11,8 @@
 <section class="container py-5">
     <h1>bootstrap-show-notification</h1>
     <p>
-        A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also called Notifications) dynamically in
+        A jQuery plugin wrapper around Bootstrap 4 Alerts, to create fixed Alerts (also called Notifications)
+        dynamically in
         JavaScript.
     </p>
     <h2>Examples</h2>
@@ -19,13 +20,17 @@
         <button type="button" id="button-show-simple" class="btn btn-primary">Show a simple notification</button>
     </p>
     <p>
-        <button type="button" id="button-show-info" class="btn btn-info">Show a more complex info-notification</button>
+        <button type="button" id="button-show-info" class="btn btn-info">Show a more complex info-notification with
+            Button handling
+        </button>
     </p>
     <p>
         <button type="button" id="button-show-danger" class="btn btn-danger">Show a danger-notification</button>
     </p>
     <p>
-        <button type="button" id="button-show-sticky" class="btn btn-secondary">Show a sticky notification with infinite duration</button>
+        <button type="button" id="button-show-sticky" class="btn btn-secondary">Show a sticky notification with infinite
+            duration
+        </button>
     </p>
     <h2>Usage</h2>
     <pre><code>
@@ -35,8 +40,14 @@
         $.showNotification({body: "Hello Notification!"})
     })
     $("#button-show-info").click(function () {
-        $.showNotification({
-            body: "&lt;h3>For your Info&lt;/h3>This notification has a title and a body and more text than the previous one.", type: "info"
+        const notification = $.showNotification({
+            body: "&lt;h3>For your Info&lt;/h3>&lt;p>This notification has a headline and more text than the previous one.&lt;/p>&lt;div>&lt;button class='btn btn-info'>Click me&lt;/button>&lt;/div>",
+            type: "info"
+        })
+        notification.element.querySelector(".btn-info").addEventListener("click", () => {
+            $.showNotification({
+                body: "Thank you for clicking", type: "success", direction: "append"
+            })
         })
     })
     $("#button-show-danger").click(function () {
@@ -46,7 +57,7 @@
     })
     $("#button-show-sticky").click(function () {
         $.showNotification({
-            body: "This notification will stay", type: "secondary", duration: 0 // set duration to `0` for sticky notifications
+            body: "This notification will stay", type: "secondary", duration: 0
         })
     })
 &lt;/script>
@@ -65,14 +76,19 @@
 <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./src/bootstrap-show-notification.js"></script>
-<!--<script src="./node_modules/prismjs/prism.js"></script>-->
 <script>
     $("#button-show-simple").click(function () {
         $.showNotification({body: "Hello Notification!"})
     })
     $("#button-show-info").click(function () {
-        $.showNotification({
-            body: "<h3>For your Info</h3>This notification has a headline and more text than the previous one.", type: "info"
+        const notification = $.showNotification({
+            body: "<h3>For your Info</h3><p>This notification has a headline and more text than the previous one.</p><div><button class='btn btn-info'>Click me</button></div>",
+            type: "info"
+        })
+        notification.element.querySelector(".btn-info").addEventListener("click", () => {
+            $.showNotification({
+                body: "Thank you for clicking", type: "success", direction: "append"
+            })
         })
     })
     $("#button-show-danger").click(function () {
