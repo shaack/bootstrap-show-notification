@@ -87,13 +87,17 @@
     })
     $("#button-show-info").click(function () {
         const notification = $.showNotification({
-            body: "<h3>For your Info</h3><p>This notification has a headline and more text than the previous one.</p><div><button class='btn btn-info'>Click me</button></div>",
-            type: "info"
+            body: "<h3>For your Info</h3><p>This notification has a headline and more text than the previous one.</p><div><button class='btn btn-info mr-3'>Click me</button><button class='btn btn-outline-info'>Close this Notification</button></div>",
+            type: "info",
+            duration: 20000
         })
-        notification.element.querySelector(".btn-info").addEventListener("click", () => {
+        notification.$element[0].querySelector(".btn-info").addEventListener("click", () => {
             $.showNotification({
                 body: "Thank you for clicking", type: "success", direction: "append"
             })
+        })
+        notification.$element[0].querySelector(".btn-outline-info").addEventListener("click", () => {
+            notification.$element.alert("close")
         })
     })
     $("#button-show-danger").click(function () {

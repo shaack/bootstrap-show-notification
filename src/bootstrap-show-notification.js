@@ -56,9 +56,8 @@
             head.appendChild(style)
             style.appendChild(document.createTextNode(css))
         }
-        this.element = this.showNotification()
+        this.$element = this.showNotification()
     }
-
     Notification.prototype.showNotification = function () {
         const $notification = $(this.template)
         if (this.props.direction === "prepend") {
@@ -66,14 +65,13 @@
         } else {
             this.$container.append($notification)
         }
-
         $notification.addClass("show")
         if(this.props.duration) {
             setTimeout(function () {
                 $notification.alert("close")
             }, this.props.duration)
         }
-        return $notification[0]
+        return $notification
     }
     $.extend({
         showNotification: function (props) {
