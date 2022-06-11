@@ -13,6 +13,7 @@
             type: "primary", // the appearance
             duration: 5500, // duration till auto-hide, set to `0` to disable auto-hide
             maxWidth: "520px", // the notification maxWidth
+            minWidth: "320px", // the notification minWidth
             shadow: "0 2px 6px rgba(0,0,0,0.2)", // the box-shadow
             zIndex: 100,
             margin: "1rem", // the margin (above maxWidth)
@@ -45,11 +46,12 @@
                 "#" + this.containerId + " .alert {" +
                 "box-shadow: " + this.props.shadow + ";" +
                 "max-width: " + this.props.maxWidth + ";" +
+                "min-width: " + this.props.minWidth + ";" +
                 "float: right; clear: right;" +
                 "}" +
                 "@media screen and (max-width: " + this.props.maxWidth + ") {" +
-                "#" + this.containerId + " {max-width: 100%; width: 100%; right: 0; top: 0;}" +
-                "#" + this.containerId + " .alert {margin-bottom: 0.25rem;width: auto;float: none;}" +
+                "#" + this.containerId + " {min-width: 0; max-width: 100%; width: 100%; right: 0; top: 0;}" +
+                "#" + this.containerId + " .alert {min-width: 0; margin-bottom: 0.25rem;width: auto;float: none;}" +
                 "}"
             const head = document.head || document.getElementsByTagName('head')[0]
             const style = document.createElement('style')
