@@ -76,7 +76,9 @@
         const alert = bootstrap.Alert.getOrCreateInstance(notificationElement)
         if (this.props.duration) {
             setTimeout(function () {
-                alert.close()
+                if(alert._element) { // was not closed
+                    alert.close()
+                }
             }, this.props.duration)
         }
         return notificationElement
