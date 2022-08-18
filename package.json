@@ -11,9 +11,7 @@
     "url": "git+https://github.com/shaack/bootstrap-show-notification.git"
   },
   "keywords": [
-    "Bootstrap 4",
     "Bootstrap",
-    "jQuery",
     "Widget",
     "Html",
     "UI",
@@ -26,6 +24,6 @@
   },
   "homepage": "https://shaack.com/en/open-source-components",
   "dependencies": {
-    "teevi": "^2.1.10"
+    "teevi": "^2.2.2"
   }
 }

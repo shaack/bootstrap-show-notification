@@ -3,8 +3,14 @@
  * Repository: https://github.com/shaack/bootstrap-show-notification
  * License: MIT, see file 'LICENSE'
  */
-;(function ($) {
+;(function (bootstrap) {
     "use strict"
+
+    function createElement(html) {
+        const template = document.createElement('template')
+        template.innerHTML = html.trim()
+        return template.content.firstChild
+    }
 
     function Notification(props) {
         // see https://getbootstrap.com/docs/4.0/components/alerts/
@@ -25,17 +31,15 @@
             this.props[prop] = props[prop]
         }
         const cssClass = "alert alert-" + this.props.type + " alert-dismissible fade"
-        this.id = "id-" + Math.random().toString(36).substr(2)
         this.template =
             "<div class='" + cssClass + "' role='alert'>" + this.props.body +
-            "   <button type='button' class='close' data-dismiss='alert' aria-label='close'>" +
-            "       <span aria-hidden='true'>&times;</span>" +
-            "   </button>" +
+            "   <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>" +
             "</div>"
-        this.$container = $("#" + this.containerId)
-        if (!this.$container.length) {
-            this.$container = $("<div id='" + this.containerId + "'></div>")
-            $(document.body).append(this.$container)
+        this.container = document.getElementById(this.containerId)
+        if (!this.container) {
+            this.container = document.createElement("div");
+            this.container.id = this.containerId
+            document.body.appendChild(this.container)
             const css = "#" + this.containerId + " {" +
                 "position: fixed;" +
                 "right: " + this.props.margin + ";" +
@@ -58,26 +62,28 @@
             head.appendChild(style)
             style.appendChild(document.createTextNode(css))
         }
-        this.$element = this.showNotification()
+        this.element = this.showNotification()
     }
+
     Notification.prototype.showNotification = function () {
-        const $notification = $(this.template)
+        const notificationElement = createElement(this.template)
         if (this.props.direction === "prepend") {
-            this.$container.prepend($notification)
+            this.container.prepend(notificationElement)
         } else {
-            this.$container.append($notification)
+            this.container.append(notificationElement)
         }
-        $notification.addClass("show")
-        if(this.props.duration) {
+        notificationElement.classList.add("show")
+        const alert = bootstrap.Alert.getOrCreateInstance(notificationElement)
+        if (this.props.duration) {
             setTimeout(function () {
-                $notification.alert("close")
+                alert.close()
             }, this.props.duration)
         }
-        return $notification
+        return notificationElement
     }
-    $.extend({
-        showNotification: function (props) {
-            return new Notification(props)
-        }
-    })
-}(jQuery))
+
+    bootstrap.showNotification = function (props) {
+        return new Notification(props)
+    }
+
+}(bootstrap))
