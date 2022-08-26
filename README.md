@@ -1,5 +1,8 @@
 # bootstrap-show-notification
 
+> This package is no longer maintained. Please use 
+> [bootstrap-show-toast](https://github.com/shaack/bootstrap-show-toast)
+
 A Bootstrap plugin for Bootstrap Alerts, to show them as toasts, aka notifications, dynamically with JavaScript.
 
 ![bootstrap-show-notification Example](https://shaack.com/projekte/assets/img/bootstrap-show-notification-lg.png?v=2)
@@ -76,4 +79,4 @@ this.props = {
 
 ## More Bootstrap extensions
 
-Check out my [further Bootstrap extensions](https://shaack.com/en/open-source-components)
+Check out my [further Bootstrap extensions](https://github.com/shaack?tab=repositories&q=bootstrap&type=&language=&sort=stargazers)
