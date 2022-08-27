@@ -1,13 +1,13 @@
 # bootstrap-show-notification
 
-> This package is no longer maintained. Please use 
-> [bootstrap-show-toast](https://github.com/shaack/bootstrap-show-toast)
+> This component is Bootstrap 4 only. For a Bootstrap 5 compatible 
+> package with similar functionality, see [bootstrap-show-toast](https://github.com/shaack/bootstrap-show-toast).
 
-A Bootstrap plugin for Bootstrap Alerts, to show them as toasts, aka notifications, dynamically with JavaScript.
+A jQuery plugin wrapper around Bootstrap 4 Alerts, to show them as toasts (also called notifications) dynamically from JavaScript.
 
 ![bootstrap-show-notification Example](https://shaack.com/projekte/assets/img/bootstrap-show-notification-lg.png?v=2)
 
-=> 
+=>
 - Responsive and mobile friendly
 - Needs no extra CSS
 
@@ -22,11 +22,6 @@ A Bootstrap plugin for Bootstrap Alerts, to show them as toasts, aka notificatio
 ```sh
 npm install bootstrap-show-notification
 ```
-
-## Bootstrap compatibility
-
-- Version 1.x Bootstrap 4
-- Version 2.x and greater Bootstrap 5
 
 ## Usage
 
@@ -79,4 +74,4 @@ this.props = {
 
 ## More Bootstrap extensions
 
-Check out my [further Bootstrap extensions](https://github.com/shaack?tab=repositories&q=bootstrap&type=&language=&sort=stargazers)
+Check out my [further Bootstrap extensions](https://shaack.com/en/open-source-components)
