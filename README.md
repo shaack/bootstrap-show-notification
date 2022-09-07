@@ -1,5 +1,8 @@
 # bootstrap-show-notification
 
+> This component is Bootstrap 4 only. For a Bootstrap 5 compatible
+> component with similar functionality, see [bootstrap-show-toast](https://github.com/shaack/bootstrap-show-toast).
+
 A jQuery plugin wrapper around Bootstrap 4 Alerts, to show them as toasts (also called notifications) dynamically from JavaScript.
 
 ![bootstrap-show-notification Example](https://shaack.com/projekte/assets/img/bootstrap-show-notification-lg.png?v=2)
